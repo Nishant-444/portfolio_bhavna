@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bhavna Sharma | Business & Data Analyst</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+
+		<style>
+			/* Google Fonts */
+			@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+			/* Color Palette */
+			:root {
+				--primary-color: #0a2463; /* Deep Navy Blue */
+				--secondary-color: #3d84a8; /* Muted Teal */
+				--primary-hover-color: #081c4a; /* Darker Navy for hover */
+				--background-main: #fdfbf6; /* Soft Off-White/Beige */
+				--background-card: #ffffff; /* White for cards to stand out */
+				--text-dark: #1c1c1c; /* Near Black for strong text */
+				--text-muted: #5a5a5a; /* Darker Gray for muted text */
+				--border-color: #eae6e1;
+				--transition: all 0.3s ease-in-out;
+				--shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+				--shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Base Styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: poppins, sans-serif;
+				background-color: var(--background-main);
+				color: var(--text-dark);
+				line-height: 1.7;
+				overflow-x: hidden;
+			}
+
+			a {
+				text-decoration: none;
+				color: var(--primary-color);
+				transition: var(--transition);
+			}
+
+			a:hover {
+				color: var(--secondary-color);
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			.container {
+				width: 100%;
+				min-height: 100vh;
+			}
+
+			.btn {
+				display: inline-block;
+				background-color: var(--primary-color);
+				color: var(--background-card);
+				padding: 0.8rem 1.8rem;
+				border-radius: 50px;
+				font-weight: 700;
+				font-family: poppins, sans-serif;
+				transition: var(--transition);
+				cursor: pointer;
+				border: 2px solid var(--primary-color);
+				text-transform: uppercase;
+				font-size: 0.9rem;
+				letter-spacing: 0.5px;
+			}
+
+			/* UPDATED BUTTON HOVER STYLE */
+			.btn:hover {
+				border-color: var(--primary-hover-color);
+				transform: translateY(-2px);
+				box-shadow: var(--shadow-hover);
+				background-color: transparent;
+				color: var(--primary-color);
+			}
+
+			.btn-outline {
+				background-color: transparent;
+				color: var(--primary-color);
+			}
+
+			.btn-outline:hover {
+				background-color: var(--primary-color);
+				color: var(--background-card);
+			}
+
+			.btn-sm {
+				padding: 0.4rem 1rem;
+				font-size: 0.8rem;
+				font-weight: 600;
+			}
+
+			.section {
+				padding: 100px 7%;
+				min-height: auto;
+			}
+
+			#home {
+				min-height: 100vh;
+			}
+
+			.section-title {
+				text-align: center;
+				margin-bottom: 60px;
+			}
+
+			.section-title h2 {
+				font-size: 2.8rem;
+				font-weight: 700;
+				font-family: poppins, sans-serif;
+				position: relative;
+				display: inline-block;
+				color: var(--text-dark);
+			}
+
+			.underline {
+				width: 100px;
+				height: 4px;
+				background: var(--primary-color);
+				margin: 10px auto 0;
+				border-radius: 5px;
+			}
+
+			/* Navigation */
+			nav {
+				position: fixed;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1rem 7%;
+				z-index: 1000;
+				background-color: rgba(
+					253,
+					251,
+					246,
+					0.85
+				); /* background-main with opacity */
+				backdrop-filter: blur(10px);
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+				transition: var(--transition);
+			}
+
+			.logo a {
+				font-size: 1.8rem;
+				font-weight: 700;
+				color: var(--text-dark);
+				font-family: poppins, sans-serif;
+			}
+
+			.nav-links {
+				display: flex;
+				gap: 2rem;
+			}
+
+			.nav-links li a {
+				font-weight: 600;
+				font-family: poppins, sans-serif;
+				position: relative;
+				font-size: 0.95rem;
+				color: var(--text-muted);
+			}
+
+			.nav-links li a::after {
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 2px;
+				background-color: var(--primary-color);
+				bottom: -5px;
+				left: 50%;
+				transform: translateX(-50%);
+				transition: var(--transition);
+			}
+
+			.nav-links li a:hover {
+				color: var(--primary-color);
+			}
+
+			.nav-links li a:hover::after {
+				width: 100%;
+			}
+
+			#nav-toggle {
+				display: none;
+			}
+			.nav-toggle-label {
+				display: none;
+				cursor: pointer;
+			}
+
+			/* Hero Section */
+			.home {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.home-grid {
+				display: grid;
+				grid-template-columns: 1.5fr 1fr;
+				align-items: center;
+				gap: 4rem;
+				width: 100%;
+				max-width: 1200px;
+			}
+
+			.home-content h1 {
+				font-size: 3.2rem;
+				font-weight: 700;
+				margin-bottom: 1rem;
+				font-family: poppins, sans-serif;
+				line-height: 1.2;
+			}
+
+			.home-content h1 span {
+				color: var(--primary-color);
+			}
+
+			.home-content h2 {
+				font-size: 1.8rem;
+				font-weight: 400;
+				margin-bottom: 1.5rem;
+				color: var(--text-muted);
+				font-family: poppins, sans-serif;
+			}
+
+			.home-content p {
+				font-size: 1.1rem;
+				margin-bottom: 2rem;
+				max-width: 600px;
+				color: var(--text-muted);
+			}
+
+			.home-buttons {
+				display: flex;
+				gap: 1rem;
+				margin-bottom: 2rem;
+			}
+
+			.social-icons {
+				display: flex;
+				gap: 1rem;
+			}
+
+			.social-icons a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 45px;
+				height: 45px;
+				border-radius: 50%;
+				background-color: var(--background-card);
+				border: 1px solid var(--border-color);
+				color: var(--text-muted);
+				transition: var(--transition);
+			}
+
+			.social-icons a:hover {
+				background-color: var(--primary-color);
+				color: var(--background-card);
+				transform: translateY(-5px);
+				border-color: var(--primary-color);
+			}
+
+			.home-image {
+				text-align: center;
+			}
+
+			.home-image img {
+				width: 350px;
+				height: 350px;
+				object-fit: cover;
+				border-radius: 50%;
+				border: 8px solid var(--background-card);
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+			}
+
+			/* About Section */
+			.about-grid {
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+				align-items: center;
+				gap: 4rem;
+				width: 100%;
+				max-width: 1100px;
+				margin: 0 auto;
+			}
+
+			.about-image {
+				text-align: center;
+			}
+
+			.about-image img {
+				width: 350px;
+				height: 450px;
+				border-radius: 15px;
+				object-fit: cover;
+				box-shadow: var(--shadow);
+			}
+
+			.about-text p {
+				margin-bottom: 1.5rem;
+				color: var(--text-muted);
+				font-size: 1.05rem;
+			}
+
+			.personal-info {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+
+			.info-item {
+				font-size: 1rem;
+			}
+
+			.info-title {
+				font-weight: 700;
+				color: var(--text-dark);
+				margin-right: 0.5rem;
+			}
+
+			/* Skills Section */
+			.skills-content {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 30px;
+				max-width: 1200px;
+				width: 100%;
+				margin: 0 auto;
+			}
+
+			.skill-card {
+				background-color: var(--background-card);
+				border: 1px solid var(--border-color);
+				border-radius: 10px;
+				padding: 30px;
+				transition: var(--transition);
+				text-align: center;
+			}
+
+			.skill-card:hover {
+				transform: translateY(-10px);
+				box-shadow: var(--shadow-hover);
+				border-color: var(--primary-color);
+			}
+
+			.skill-icon {
+				font-size: 2.5rem;
+				color: var(--primary-color);
+				margin-bottom: 20px;
+			}
+
+			.skill-card h3 {
+				font-size: 1.3rem;
+				margin-bottom: 15px;
+				font-weight: 600;
+				font-family: poppins, sans-serif;
+			}
+
+			.skill-card p {
+				color: var(--text-muted);
+				font-size: 0.95rem;
+				margin-bottom: 20px;
+				min-height: 40px; /* To align tags */
+			}
+
+			.skill-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				justify-content: center;
+			}
+
+			.skill-tags span {
+				background-color: #e6e9f4; /* Lighter shade of primary color */
+				color: var(--primary-color);
+				font-size: 0.8rem;
+				padding: 0.4rem 0.9rem;
+				border-radius: 50px;
+				font-weight: 600;
+			}
+
+			/* Experience & Education Section */
+			.timeline {
+				position: relative;
+				max-width: 900px;
+				margin: 0 auto;
+			}
+
+			.timeline::before {
+				content: "";
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 2px;
+				height: 100%;
+				background-color: var(--border-color);
+				transition: left 0.3s ease;
+			}
+
+			.timeline-item {
+				position: relative;
+				width: 100%;
+				padding: 20px 0;
+			}
+
+			.timeline-item:last-child {
+				padding-bottom: 0;
+			}
+
+			.timeline-icon {
+				position: absolute;
+				left: 50%;
+				top: 30px;
+				transform: translateX(-50%);
+				width: 45px;
+				height: 45px;
+				border-radius: 50%;
+				background-color: var(--primary-color);
+				color: var(--background-card);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				z-index: 2;
+				font-size: 1.3rem;
+				border: 3px solid var(--background-main);
+				transition: left 0.3s ease;
+			}
+
+			.timeline-content {
+				position: relative;
+				width: 45%;
+				padding: 30px; /* Increased padding */
+				background-color: var(--background-card);
+				border-radius: 10px;
+				box-shadow: var(--shadow);
+				border: 1px solid var(--border-color);
+			}
+
+			.timeline-item:nth-child(odd) .timeline-content {
+				float: left;
+				clear: right;
+				transform: translateX(-10%);
+			}
+
+			.timeline-item:nth-child(even) .timeline-content {
+				float: right;
+				clear: left;
+				transform: translateX(10%);
+			}
+
+			.timeline-content h3 {
+				font-size: 1.25rem;
+				font-weight: 700;
+				margin-bottom: 5px;
+				font-family: poppins, sans-serif;
+				color: var(--primary-color);
+			}
+
+			.timeline-company {
+				font-size: 1.05rem;
+				font-weight: 600;
+				color: var(--text-dark);
+				margin-bottom: 10px;
+			}
+
+			.timeline-date {
+				display: inline-block;
+				font-size: 0.85rem;
+				margin-bottom: 10px;
+				color: var(--text-muted);
+				font-weight: 600;
+			}
+
+			.timeline-content p {
+				color: var(--text-muted);
+				font-size: 0.95rem;
+			}
+
+			.clearfix::after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			/* Certifications Section */
+			.certifications-content {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+				gap: 30px;
+				max-width: 1200px;
+				margin: 30px auto 0;
+			}
+
+			.certification-card {
+				display: flex;
+				gap: 20px;
+				align-items: center;
+				background-color: var(--background-card);
+				border-radius: 10px;
+				padding: 20px;
+				transition: var(--transition);
+				border: 1px solid var(--border-color);
+			}
+
+			.certification-card:hover {
+				transform: translateY(-5px);
+				box-shadow: var(--shadow);
+			}
+
+			.certification-icon {
+				font-size: 1.8rem;
+				color: var(--primary-color);
+			}
+
+			.certification-details {
+				flex-grow: 1;
+			}
+			.certification-details h3 {
+				font-size: 1.1rem;
+				font-weight: 600;
+				margin-bottom: 5px;
+			}
+			.certification-details p {
+				margin-bottom: 15px;
+				color: var(--text-muted);
+				font-weight: 600;
+			}
+
+			/* Contact Section */
+			.contact-content {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 50px;
+				max-width: 1100px;
+				margin: 0 auto;
+				background: var(--background-card);
+				padding: 50px;
+				border-radius: 15px;
+				box-shadow: var(--shadow);
+			}
+
+			.contact-info {
+				flex: 1;
+				min-width: 300px;
+			}
+
+			.contact-info h3 {
+				font-family: poppins, sans-serif;
+				font-size: 1.8rem;
+				margin-bottom: 20px;
+			}
+
+			.contact-item {
+				display: flex;
+				gap: 20px;
+				align-items: center;
+				margin-bottom: 25px;
+			}
+
+			.contact-icon {
+				font-size: 1.5rem;
+				color: var(--primary-color);
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: #e6e9f4;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.contact-text h4 {
+				font-size: 1.1rem;
+				font-weight: 700;
+				margin-bottom: 3px;
+			}
+
+			.contact-text p {
+				color: var(--text-muted);
+			}
+			.contact-form {
+				flex: 1.5;
+				min-width: 300px;
+			}
+
+			.form-group {
+				margin-bottom: 20px;
+			}
+
+			.form-group input,
+			.form-group textarea {
+				width: 100%;
+				padding: 15px;
+				background-color: var(--background-main);
+				border: 1px solid var(--border-color);
+				border-radius: 8px;
+				color: var(--text-dark);
+				font-family: poppins, sans-serif;
+				transition: var(--transition);
+				font-size: 1rem;
+			}
+
+			.form-group textarea {
+				min-height: 150px;
+				resize: vertical;
+			}
+
+			.form-group input:focus,
+			.form-group textarea:focus {
+				outline: none;
+				border-color: var(--primary-color);
+				box-shadow: 0 0 0 3px rgba(10, 36, 99, 0.15);
+			}
+
+			/* Footer */
+			footer {
+				background-color: var(--text-dark);
+				color: var(--text-muted);
+				padding: 40px 5%;
+				text-align: center;
+			}
+
+			.footer-content {
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.footer-social {
+				display: flex;
+				justify-content: center;
+				gap: 15px;
+				margin-bottom: 20px;
+			}
+
+			.footer-social a {
+				color: var(--background-main);
+				font-size: 1.3rem;
+				width: 45px;
+				height: 45px;
+				line-height: 45px;
+				text-align: center;
+				border-radius: 50%;
+				background: #2a2a2a;
+				transition: var(--transition);
+			}
+
+			.footer-social a:hover {
+				background: var(--primary-color);
+				transform: translateY(-3px);
+			}
+
+			footer p {
+				font-size: 0.9rem;
+			}
+
+			/* Media Queries for Responsiveness */
+			@media screen and (max-width: 992px) {
+				.section {
+					padding: 80px 5%;
+				}
+
+				.home-grid,
+				.about-grid {
+					grid-template-columns: 1fr;
+					gap: 2rem;
+					text-align: center;
+				}
+
+				.home-image {
+					grid-row: 1;
+					margin-bottom: 2rem;
+				}
+				.home-buttons,
+				.social-icons {
+					justify-content: center;
+				}
+				.about-image {
+					margin-bottom: 2rem;
+				}
+				.personal-info {
+					text-align: left;
+				}
+
+				/* TIMELINE ALIGNMENT FIX FOR MOBILE */
+				.timeline::before {
+					left: 22px;
+					transform: translateX(0);
+				}
+
+				.timeline-icon {
+					left: 22px;
+					transform: translateX(-50%);
+				}
+
+				.timeline-item {
+					padding-left: 50px;
+					padding-right: 0;
+				}
+
+				.timeline-item:nth-child(odd) .timeline-content,
+				.timeline-item:nth-child(even) .timeline-content {
+					width: 100%;
+					float: none;
+					transform: none;
+					text-align: left;
+					clear: both;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.nav-toggle-label {
+					display: block;
+					position: relative;
+					width: 2rem;
+					height: 2rem;
+					z-index: 1001; /* Above nav links */
+				}
+
+				.nav-toggle-label span,
+				.nav-toggle-label span::before,
+				.nav-toggle-label span::after {
+					display: block;
+					background: var(--text-dark);
+					height: 3px;
+					width: 100%;
+					border-radius: 3px;
+					position: absolute;
+					transition: all 0.3s ease-in-out;
+				}
+
+				.nav-toggle-label span::before {
+					content: "";
+					top: -8px;
+				}
+				.nav-toggle-label span::after {
+					content: "";
+					top: 8px;
+				}
+
+				.nav-links {
+					position: absolute;
+					top: 0;
+					right: 0;
+					background-color: var(--background-card);
+					width: 100%;
+					height: 100vh;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					padding: 1rem 0;
+					box-shadow: var(--shadow);
+					transform: translateX(100%);
+					opacity: 0;
+					pointer-events: none;
+					transition: transform 0.3s ease, opacity 0.3s ease;
+				}
+
+				#nav-toggle:checked ~ .nav-links {
+					transform: translateX(0);
+					opacity: 1;
+					pointer-events: auto;
+				}
+
+				#nav-toggle:checked ~ .nav-toggle-label span {
+					background: transparent;
+				}
+				#nav-toggle:checked ~ .nav-toggle-label span::before {
+					transform: rotate(45deg);
+					top: 0;
+				}
+				#nav-toggle:checked ~ .nav-toggle-label span::after {
+					transform: rotate(-45deg);
+					top: 0;
+				}
+
+				.contact-content {
+					flex-direction: column;
+					padding: 30px;
+					.btn-outline:hover {
+						background-color: var(--primary-color);
+						color: var(--background-card);
+					}
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<nav>
+				<div class="logo">
+					<a href="#home">Bhavna</a>
+				</div>
+				<input type="checkbox" id="nav-toggle" />
+				<label for="nav-toggle" class="nav-toggle-label">
+					<span></span>
+				</label>
+				<ul class="nav-links">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#experience">Experience</a></li>
+					<li><a href="#education">Education</a></li>
+					<li><a href="#certifications">Certifications</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+
+			<section id="home" class="section home">
+				<div class="home-grid">
+					<div class="home-content">
+						<h1>Hello, I'm <span>Bhavna Sharma</span></h1>
+						<h2>Business Analyst | French B2 Level</h2>
+						<p>
+							Passionate about working in dynamic, multicultural environments
+							with strong communication abilities for international
+							collaboration.
+						</p>
+						<div class="home-buttons">
+							<a href="#contact" class="btn">Contact Me</a>
+							<a href="bhavna_cv.pdf" class="btn btn-outline" download
+								>Get CV</a
+							>
+						</div>
+						<div class="social-icons">
+							<a
+								href="https://www.linkedin.com/in/bhavna-french"
+								target="_blank"
+								aria-label="LinkedIn"
+								><i class="fab fa-linkedin-in"></i
+							></a>
+							<a href="mailto:bhavnasharma6543@gmail.com" aria-label="Email"
+								><i class="fas fa-envelope"></i
+							></a>
+						</div>
+					</div>
+					<div class="home-image">
+						<img
+							src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=600&fit=crop&crop=face"
+							alt="Bhavna Sharma"
+						/>
+					</div>
+				</div>
+			</section>
+
+			<section id="about" class="section about">
+				<div class="section-title">
+					<h2>About Me</h2>
+					<div class="underline"></div>
+				</div>
+				<div class="about-grid">
+					<div class="about-image">
+						<img
+							src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=600&fit=crop&crop=face"
+							alt="Bhavna Sharma Professional Photo"
+						/>
+					</div>
+					<div class="about-text">
+						<p>
+							I have transitioned into the Data and Business Analytics domain,
+							where I've cultivated proficiency in tools like Microsoft Excel
+							and Power BI. I enjoy working at the intersection of data and
+							strategy, transforming raw information into actionable insights
+							that support smarter decision-making.
+						</p>
+						<p>
+							Having spent time in France, I bring a global perspective to my
+							work, with the adaptability and communication skills needed to
+							thrive in dynamic, multicultural environments. I'm currently open
+							to opportunities that allow me to combine my analytical
+							capabilities with client-facing experience.
+						</p>
+						<div class="personal-info">
+							<div class="info-item">
+								<span class="info-title">Name:</span>
+								<span class="info-value">Bhavna Sharma</span>
+							</div>
+							<div class="info-item">
+								<span class="info-title">Email:</span>
+								<span class="info-value">bhavnasharma6543@gmail.com</span>
+							</div>
+							<div class="info-item">
+								<span class="info-title">Languages:</span>
+								<span class="info-value">English, French</span>
+							</div>
+							<div class="info-item">
+								<span class="info-title">Location:</span>
+								<span class="info-value">Jaipur, Rajasthan</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="skills" class="section skills">
+				<div class="section-title">
+					<h2>My Skills</h2>
+					<div class="underline"></div>
+				</div>
+				<div class="skills-content">
+					<div class="skill-card">
+						<div class="skill-icon"><i class="fas fa-sitemap"></i></div>
+						<h3>Business Analysis & Strategy</h3>
+						<p>
+							Applying research frameworks and account-based marketing
+							strategies.
+						</p>
+						<div class="skill-tags">
+							<span>Research Frameworks</span>
+							<span>Account-based Marketing</span>
+						</div>
+					</div>
+					<div class="skill-card">
+						<div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+						<h3>Data Analysis & Visualization</h3>
+						<p>
+							Transforming raw data into insights using Power BI and Advanced
+							Excel.
+						</p>
+						<div class="skill-tags">
+							<span>Power BI</span>
+							<span>Advanced Excel</span>
+							<span>SQL</span>
+						</div>
+					</div>
+					<div class="skill-card">
+						<div class="skill-icon"><i class="fas fa-handshake"></i></div>
+						<h3>Client Relationship Management</h3>
+						<p>
+							Building strong client relationships in multicultural
+							environments.
+						</p>
+						<div class="skill-tags">
+							<span>CRM</span>
+							<span>Communication</span>
+							<span>Collaboration</span>
+						</div>
+					</div>
+					<div class="skill-card">
+						<div class="skill-icon"><i class="fas fa-globe"></i></div>
+						<h3>Bilingual Communication</h3>
+						<p>
+							Fluent English and French (B2) for cross-cultural collaboration.
+						</p>
+						<div class="skill-tags">
+							<span>French (B2)</span>
+							<span>English</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="experience" class="section experience">
+				<div class="section-title">
+					<h2>Work Experience</h2>
+					<div class="underline"></div>
+				</div>
+				<div class="timeline">
+					<div class="timeline-item clearfix">
+						<div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+						<div class="timeline-content">
+							<h3>Intern</h3>
+							<div class="timeline-company">Future Interns</div>
+							<div class="timeline-date">June 2025 - Present</div>
+							<p>
+								Data Science and Analytics Internship based in Bengaluru,
+								Karnataka.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="education" class="section education">
+				<div class="section-title">
+					<h2>Education</h2>
+					<div class="underline"></div>
+				</div>
+				<div class="timeline">
+					<div class="timeline-item clearfix">
+						<div class="timeline-icon">
+							<i class="fas fa-graduation-cap"></i>
+						</div>
+						<div class="timeline-content">
+							<h3>Master's Programme, International Relations and Affairs</h3>
+							<div class="timeline-company">Aix-Marseille University</div>
+							<div class="timeline-date">January 2025 - June 2025</div>
+						</div>
+					</div>
+					<div class="timeline-item clearfix">
+						<div class="timeline-icon">
+							<i class="fas fa-graduation-cap"></i>
+						</div>
+						<div class="timeline-content">
+							<h3>Master's degree, French Language and Literature</h3>
+							<div class="timeline-company">University of Rajasthan</div>
+							<div class="timeline-date">September 2023 - May 2025</div>
+						</div>
+					</div>
+					<div class="timeline-item clearfix">
+						<div class="timeline-icon">
+							<i class="fas fa-graduation-cap"></i>
+						</div>
+						<div class="timeline-content">
+							<h3>Delf A2 and B1, French Language and Literature</h3>
+							<div class="timeline-company">Alliance Française de Delhi</div>
+							<div class="timeline-date">June 2023</div>
+						</div>
+					</div>
+					<div class="timeline-item clearfix">
+						<div class="timeline-icon">
+							<i class="fas fa-graduation-cap"></i>
+						</div>
+						<div class="timeline-content">
+							<h3>Bachelor of Commerce (BCom)</h3>
+							<div class="timeline-company">
+								S.S. Jain Subodh PG (Autonomous) College, Jaipur
+							</div>
+							<div class="timeline-date">July 2018 - July 2021</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="certifications" class="section certifications">
+				<div class="section-title">
+					<h2>Certifications</h2>
+					<div class="underline"></div>
+				</div>
+				<div class="certifications-content">
+					<div class="certification-card">
+						<div class="certification-icon"><i class="fas fa-award"></i></div>
+						<div class="certification-details">
+							<h3>Data Analytics Job Simulation</h3>
+							<a href="#" class="btn btn-sm">View Certificate</a>
+						</div>
+					</div>
+					<div class="certification-card">
+						<div class="certification-icon"><i class="fas fa-award"></i></div>
+						<div class="certification-details">
+							<h3>AWS APAC - Solutions Architecture Job Simulation</h3>
+							<a href="#" class="btn btn-sm">View Certificate</a>
+						</div>
+					</div>
+					<div class="certification-card">
+						<div class="certification-icon"><i class="fas fa-award"></i></div>
+						<div class="certification-details">
+							<h3>Excel</h3>
+							<a href="#" class="btn btn-sm">View Certificate</a>
+						</div>
+					</div>
+					<div class="certification-card">
+						<div class="certification-icon"><i class="fas fa-award"></i></div>
+						<div class="certification-details">
+							<h3>DELF B1</h3>
+							<a href="#" class="btn btn-sm">View Certificate</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="contact" class="section contact">
+				<div class="section-title">
+					<h2>Get In Touch</h2>
+					<div class="underline"></div>
+				</div>
+				<div class="contact-content">
+					<div class="contact-info">
+						<h3>Let's Connect!</h3>
+						<div class="contact-item">
+							<div class="contact-icon">
+								<i class="fas fa-map-marker-alt"></i>
+							</div>
+							<div class="contact-text">
+								<h4>Location</h4>
+								<p>Jaipur, Rajasthan, India</p>
+							</div>
+						</div>
+						<div class="contact-item">
+							<div class="contact-icon"><i class="fas fa-envelope"></i></div>
+							<div class="contact-text">
+								<h4>Email</h4>
+								<p>bhavnasharma6543@gmail.com</p>
+							</div>
+						</div>
+						<div class="contact-item">
+							<div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+							<div class="contact-text">
+								<h4>LinkedIn</h4>
+								<p>linkedin.com/in/bhavna-french</p>
+							</div>
+						</div>
+					</div>
+					<div class="contact-form">
+						<form
+							action="https://formsubmit.co/bhavnasharma6543@gmail.com"
+							method="POST"
+						>
+							<div class="form-group">
+								<input
+									type="text"
+									name="name"
+									placeholder="Your Name"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<input
+									type="email"
+									name="email"
+									placeholder="Your Email"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<textarea
+									name="message"
+									placeholder="Your Message"
+									required
+								></textarea>
+							</div>
+							<button type="submit" class="btn">Send Message</button>
+						</form>
+					</div>
+				</div>
+			</section>
+
+			<footer>
+				<div class="footer-content">
+					<div class="footer-social">
+						<a
+							href="https://www.linkedin.com/in/bhavna-french"
+							target="_blank"
+							aria-label="LinkedIn"
+							><i class="fab fa-linkedin-in"></i
+						></a>
+						<a href="mailto:bhavnasharma6543@gmail.com" aria-label="Email"
+							><i class="fas fa-envelope"></i
+						></a>
+					</div>
+					<p>&copy; 2025 Bhavna Sharma. All Rights Reserved.</p>
+				</div>
+			</footer>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				// Mobile navigation toggle
+				const navToggle = document.getElementById("nav-toggle");
+				const navLinks = document.querySelector(".nav-links");
+
+				// Close nav when a link is clicked
+				navLinks.addEventListener("click", () => {
+					if (navToggle.checked) {
+						navToggle.checked = false;
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
